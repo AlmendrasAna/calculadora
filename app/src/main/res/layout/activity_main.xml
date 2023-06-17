@@ -2,96 +2,101 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mult"
+    android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#16012B"
+    android:background="#19023A"
     tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="243dp"
+        android:layout_width="208dp"
         android:layout_height="48dp"
         android:text="Calculadora"
+        android:textColor="#31E1EF"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.797"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:layout_constraintVertical_bias="0.553" />
-
-    <EditText
-        android:id="@+id/numero1editText"
-        android:hint="numero 1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        style="@style/styleEditeTxt" />
-
-    <ImageButton
-        android:id="@+id/salir"
-        android:layout_width="69dp"
-        android:layout_height="51dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/baseline_exit_to_app_24" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="98dp"
         android:layout_height="73dp"
-        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:srcCompat="@drawable/baseline_calculate_24" />
 
     <EditText
+        android:id="@+id/numero1editText"
+        style="@style/styleEditeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="numero 1"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="0.060000002" />
+
+    <EditText
         android:id="@+id/numero2EditText"
+        style="@style/styleEditeTxt"
+        android:layout_marginTop="8dp"
         android:hint="numero 2"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="@+id/numero1editText"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/numero1editText"
-        app:layout_constraintTop_toBottomOf="@+id/numero1editText"
-        style="@style/styleEditeTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/numero1editText" />
+
     <Button
         android:id="@+id/multiplicarButton"
+        style="@style/styleButton"
+        android:layout_marginTop="8dp"
         android:text="*"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/sumaButton"
         app:layout_constraintTop_toBottomOf="@+id/sumaButton"
-        app:layout_constraintVertical_bias="0.046"
-        style="@style/styleButton" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/restaButton"
+        style="@style/styleButton"
         android:text="-"
         app:layout_constraintEnd_toEndOf="@+id/numero2EditText"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/sumaButton"
-        app:layout_constraintTop_toBottomOf="@+id/numero2EditText"
-        style="@style/styleButton" />
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/numero2EditText" />
+
 
     <Button
         android:id="@+id/divicionButton"
+        style="@style/styleButton"
+        android:layout_marginTop="8dp"
         android:text="/"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="@+id/restaButton"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/multiplicarButton"
         app:layout_constraintTop_toBottomOf="@+id/restaButton"
-        app:layout_constraintVertical_bias="0.069"
-        style="@style/styleButton" />
-
+        app:layout_constraintVertical_bias="0.01999998" />
 
     <Button
         android:id="@+id/sumaButton"
         style="@style/styleButton"
         android:text="+"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/numero2EditText"
         app:layout_constraintTop_toBottomOf="@+id/numero2EditText" />
 
@@ -99,13 +104,28 @@
         android:id="@+id/textView"
         android:layout_width="134dp"
         android:layout_height="20dp"
+        android:layout_marginStart="24dp"
         android:text="by Ana Almendras"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/salir"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:layout_constraintVertical_bias="0.416" />
+
+    <ImageButton
+        android:id="@+id/salir"
+        android:layout_width="76dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="24dp"
+        android:background="#177D56DA"
+        android:tint="#8D65AF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:layout_constraintVertical_bias="0.338"
+        app:srcCompat="@drawable/baseline_exit_to_app_24" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -126,6 +146,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.89" />
+        app:layout_constraintGuide_percent="0.83" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
