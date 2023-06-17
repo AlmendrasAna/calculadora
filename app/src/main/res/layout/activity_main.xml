@@ -2,8 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mult"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:outlineAmbientShadowColor="#9C27B0"
     tools:context=".MainActivity">
 
     <EditText
@@ -11,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:drawableTint="#9C27B0"
         android:ems="10"
         android:hint="numero 1"
         android:inputType="number"
@@ -22,16 +25,15 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="211dp"
-        android:layout_height="117dp"
+        android:layout_width="197dp"
+        android:layout_height="93dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:srcCompat="@drawable/baseline_calculate_24" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/numero2EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -45,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/numero1editText" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/multiplicarButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autoSizePresetSizes="20dp"
@@ -54,27 +56,27 @@
         app:layout_constraintTop_toBottomOf="@+id/sumaButton" />
 
     <Button
-        android:id="@+id/RestaButton"
+        android:id="@+id/restaButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:autoSizePresetSizes="20dp"
         android:text="-"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText2"
+        app:layout_constraintEnd_toEndOf="@+id/numero2EditText"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/sumaButton"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/numero2EditText" />
 
     <Button
-        android:id="@+id/DivicionButton"
+        android:id="@+id/divicionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autoSizePresetSizes="20dp"
         android:text="/"
-        app:layout_constraintEnd_toEndOf="@+id/RestaButton"
+        app:layout_constraintEnd_toEndOf="@+id/restaButton"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/RestaButton" />
+        app:layout_constraintStart_toEndOf="@+id/multiplicarButton"
+        app:layout_constraintTop_toBottomOf="@+id/restaButton" />
 
     <Button
         android:id="@+id/sumaButton"
@@ -83,17 +85,31 @@
         android:layout_marginTop="8dp"
         android:autoSizePresetSizes="20dp"
         android:text="+"
-        app:layout_constraintStart_toStartOf="@+id/editTextText2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintStart_toStartOf="@+id/numero2EditText"
+        app:layout_constraintTop_toBottomOf="@+id/numero2EditText" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="134dp"
         android:layout_height="20dp"
         android:text="by Ana Almendras"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DivicionButton" />
+        app:layout_constraintTop_toBottomOf="@+id/divicionButton" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9015048" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
