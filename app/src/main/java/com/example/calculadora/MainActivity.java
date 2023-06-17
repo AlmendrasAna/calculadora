@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             Integer numb1 = Integer.parseInt(numb1EditTxT.getText().toString());
             Integer numb2 = Integer.parseInt(numb2EditTxT.getText().toString());
 
-            if(signo.equals("/")&& numb1 == 0 ){
+            if(signo.equals("/")&& numb2 == 0 ){
                 Toast.makeText(getBaseContext(),  "no se puede dividir por 0: " , Toast.LENGTH_SHORT).show();
 
             }else {
