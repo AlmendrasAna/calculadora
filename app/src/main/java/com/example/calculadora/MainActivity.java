@@ -2,11 +2,11 @@ package com.example.calculadora;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.SyncStatusObserver;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +20,18 @@ public class MainActivity extends AppCompatActivity {
         EditText numero2 = findViewById(R.id.numero2EditText);
 
         Button sumaB = findViewById(R.id.sumaButton);
+        Button restaB = findViewById(R.id.restaButton);
+        Button divicionB = findViewById(R.id.divicionButton);
+        Button multiplicacionB =  findViewById(R.id.multiplicarButton);
+        ImageButton salirB =  findViewById(R.id.salir);
+
+        salirB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finishAndRemoveTask();
+            }
+        });
+
        sumaB.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -27,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
            }
        });
 
-        Button restaB = findViewById(R.id.restaButton);
         restaB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button divicionB = findViewById(R.id.divicionButton);
         divicionB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button multiplicacionB =  findViewById(R.id.multiplicarButton);
+
         multiplicacionB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
